@@ -1,0 +1,123 @@
+/* Variables para colores (cambia estos valores según tu paleta) */
+:root {
+    --bg-color: #E6E6E6;  /* Fondo claro */
+    --text-color: #333;   /* Texto claro */
+    --header-bg: #8373fd;    /* Fondo header claro */
+    --header-text: #fff;  /* Texto header claro */
+    --border-color: #000000; /* Bordes */
+    --hover-bg: #fff;  /* Hover */
+    --bg-button: #fff; /*bg botones*/
+}
+
+/* Modo oscuro: redefine las variables */
+.dark-mode {
+    --bg-color: #121212;  /* Fondo oscuro */
+    --text-color: #4acf61; /* Texto oscuro */
+    --header-bg: #1a1a1a; /* Fondo header oscuro */
+    --header-text: #fff;   /* Texto header oscuro */
+    --border-color: #4acf61;  /* Bordes más claros */
+    --hover-bg: #4acf61;  /* Hover más oscuro */
+    --bg-button: #4acf61; /*bg botones*/
+ }
+
+/* Aplica las variables a los elementos */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s;  /* Transición suave */
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 10px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+nav ul {
+	display: flex;
+	width: fit-content;
+	border: 3px solid var(--border-color); /*grosor|estilo|color*/
+	border-radius: 25px; 
+	padding: 10px;
+	background-color: #222;
+	margin: 0 auto; /*centra el borde*/
+	list-style-type: none; /*Elimina los 3 puntitos*/
+	background-color: var(--header-bg);  /* Usa variable */
+}
+
+nav a{
+	text-decoration: none;   /*elimina todas las decoraciones de la palabra*/
+	border-style: 2px;
+	color: white;
+	margin: 10px;	/* espacio entre navs*/
+}
+
+
+nav li:hover {
+    background-color: var(--hover-bg);
+}
+
+#portada{
+	height: 100vh;
+	position: relative; /* Mantén esto si necesitas posicionar otros elementos relativamente */
+	display: flex; /*activa flexbox*/
+	flex-direction: column; /*apila elementos en columnas*/
+	align-items: center;
+	justify-content: center; /* centra verticalmente en la altuar de la ventana*/	
+}	
+
+#portada img {
+	max-width: 15%;
+    border: 3px solid var(--border-color);
+	border-radius: 50%;
+}
+
+#portada p{
+    color: #993afe;
+}
+
+#sobreMi{
+    height: 100vh;
+}
+
+#habilidades ul li{
+	display: flex;
+	width: fit-content;
+	padding: 10px;
+	margin: 0 auto; /*centra el borde*/
+	list-style-type: none; /*Elimina los 3 puntitos*/
+}
+
+
+#portada button{
+    background-color: var(--bg-button);
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle {
+    position: relative;
+    top: 2.5rem;
+    left: 13rem;
+    background: var(--header-bg);
+    color: var(--header-text);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+    background: var(--hover-bg);
+}
+
