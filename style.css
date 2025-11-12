@@ -1,123 +1,230 @@
-/* Variables para colores (cambia estos valores según tu paleta) */
-:root {
-    --bg-color: #E6E6E6;  /* Fondo claro */
-    --text-color: #333;   /* Texto claro */
-    --header-bg: #8373fd;    /* Fondo header claro */
-    --header-text: #fff;  /* Texto header claro */
-    --border-color: #000000; /* Bordes */
-    --hover-bg: #fff;  /* Hover */
-    --bg-button: #fff; /*bg botones*/
+/* Botón de cambio de tema */
+#theme-toggle{
+    position: relative;
+    top: 2.5rem;
+    left: 13rem;
+    background: var(--bg-button);
+    color: var(--header-text);
+    border: 2px solid var(--color-claro);
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#rgb-toggle{
+    position: relative;
+    top: 2.5rem;
+    left: 14rem;
+    background: var(--bg-button);
+    color: var(--header-text);
+    border: 2px solid var(--color-claro);
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#theme-toggle:hover {
+    background: var(--hover-bg);
 }
 
-/* Modo oscuro: redefine las variables */
-.dark-mode {
-    --bg-color: #121212;  /* Fondo oscuro */
-    --text-color: #4acf61; /* Texto oscuro */
-    --header-bg: #1a1a1a; /* Fondo header oscuro */
-    --header-text: #fff;   /* Texto header oscuro */
-    --border-color: #4acf61;  /* Bordes más claros */
-    --hover-bg: #4acf61;  /* Hover más oscuro */
-    --bg-button: #4acf61; /*bg botones*/
- }
+/* Variables para colores */
+:root {
+    --color-rojo: #ff4b3e;
+    --color-naranja: #f0803b;
+    --color-magenta: #b23a8a;
+    --color-moradoOscuro: #800080;
+    --color-morado: #4c2a85;
+    --color-oscuro: #1b1326;
+    --color-claro: #ffe9d6;
+    --color-azulProfundo: #0F0D33;
 
-/* Aplica las variables a los elementos */
-body {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --accent: var(--color-naranja);
+    --muted: rgba(255, 255, 255, 0.85);
+
+   
+    --header-text: #ffffff;
+    --hover-bg: rgba(255, 255, 255, 0.2);
+    --border-color: #ccc;
+    --bg-button: #4c2a85;
+    --header-bg: #0F0D33;
+    --text-color: #000000;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    --color-rojo: #0a0a0a;
+    --color-naranja: #1a1a1a;
+    --color-magenta: #2a2a2a;
+    --color-morado: #3a3a3a;
+    --color-moradoOscuro: #777477;
+    --color-oscuro: #000000;
+    --color-claro: #e0e0e0;
+    --color-azulProfundo: rgb(11, 10, 26);
+
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent: #666666;
+    --muted: #cfcfcf;
+
+    --header-text: #e0e0e0;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --border-color: #555;
+    --bg-button: #2a2a2a;
+    --header-bg: #111;
+    --text-color: #e0e0e0;
+}
+
+/* Estilos generales */
+html, body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background:
+        linear-gradient(135deg,
+          var(--color-rojo) 0%,
+          var(--color-naranja),
+          var(--color-magenta) 50%,
+          var(--color-morado) 100%
+        ),
+        url('Sin título.jpg') center/cover no-repeat fixed;
     color: var(--text-color);
     text-align: center;
-    transition: background-color 0.5s, color 0.5s;  /* Transición suave */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
-    background-color: var(--header-bg);
     color: var(--header-text);
     padding: 10px;
     transition: background-color 0.5s, color 0.5s;
 }
 
 nav ul {
-	display: flex;
-	width: fit-content;
-	border: 3px solid var(--border-color); /*grosor|estilo|color*/
-	border-radius: 25px; 
-	padding: 10px;
-	background-color: #222;
-	margin: 0 auto; /*centra el borde*/
-	list-style-type: none; /*Elimina los 3 puntitos*/
-	background-color: var(--header-bg);  /* Usa variable */
+    display: flex;
+    width: fit-content;
+    border: 3px solid var(--color-claro);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 0 auto;
+    list-style-type: none;
 }
 
-nav a{
-	text-decoration: none;   /*elimina todas las decoraciones de la palabra*/
-	border-style: 2px;
-	color: white;
-	margin: 10px;	/* espacio entre navs*/
+nav a {
+    text-decoration: none;
+    color: var(--header-text);
+    margin: 10px;
 }
-
 
 nav li:hover {
     background-color: var(--hover-bg);
 }
 
-#portada{
-	height: 100vh;
-	position: relative; /* Mantén esto si necesitas posicionar otros elementos relativamente */
-	display: flex; /*activa flexbox*/
-	flex-direction: column; /*apila elementos en columnas*/
-	align-items: center;
-	justify-content: center; /* centra verticalmente en la altuar de la ventana*/	
-}	
+/* Portada */
+#portada {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    background: var(--glass-bg);
+    border: 1px solid whitesmoke;
+}
 
 #portada img {
-	max-width: 15%;
+    max-width: 15%;
     border: 3px solid var(--border-color);
-	border-radius: 50%;
+    border-radius: 50%;
 }
 
-#portada p{
-    color: #993afe;
+#portada p {
+    color: var(--color-claro);
 }
 
-#sobreMi{
-    height: 100vh;
+.boton-portada {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-#habilidades ul li{
-	display: flex;
-	width: fit-content;
-	padding: 10px;
-	margin: 0 auto; /*centra el borde*/
-	list-style-type: none; /*Elimina los 3 puntitos*/
-}
-
-
-#portada button{
+.boton-portada button {
     background-color: var(--bg-button);
+    width: 6rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    border: 2px solid #800080;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    animation: rgbGlow 2s infinite;
 }
 
+.boton-portada a.rgb-on {
+    animation: rgbGlow 2s infinite;
+}
+
+
+/* Animación RGB */
+@keyframes rgbGlow {
+    0% { box-shadow: 0 0 10px red; }
+    25% { box-shadow: 0 0 10px orange; }
+    50% { box-shadow: 0 0 10px lime; }
+    75% { box-shadow: 0 0 10px blue; }
+    100% { box-shadow: 0 0 10px violet; }
+}
+
+/* Secciones */
+#sobreMi, #habilidades, #proyectos {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#habilidades ul {
+    text-align: left;
+    max-width: 600px;
+}
+
+#habilidades ul li {
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+#sobreMi h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
 footer {
     background-color: var(--header-bg);
     color: var(--header-text);
     transition: background-color 0.3s, color 0.3s;
 }
 
-#theme-toggle {
-    position: relative;
-    top: 2.5rem;
-    left: 13rem;
-    background: var(--header-bg);
-    color: var(--header-text);
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
+/* Animación de aparición */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-#theme-toggle:hover {
-    background: var(--hover-bg);
+/* Responsividad */
+@media (max-width: 768px) {
+    #portada, #sobreMi, #habilidades, #proyectos {
+        min-height: auto;
+        padding: 10px;
+    }
 }
-

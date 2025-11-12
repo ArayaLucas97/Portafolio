@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset = "UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="index, follow" />
-		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
-		<meta name = "author" content="Lucas Araya" />	
-		<title>Mi Pagina Web</title>	
-	</head>
-	<body>
-		<header>		
-			<nav id="nav">
-				<button id="theme-toggle" aria-label="Cambiar a modo oscuro">🌙 Modo Oscuro</button>
-				<ul>
-					<li><a href ="#habilidades">Habilidades</a></li>
-					<li><a href ="#sobreMi">SobreMi</a></li>
-					<li><a href ="#proyectos">Proyectos</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div id="portada">
-			<img src="photo.jpg">
-			<h3>Lucas Araya</p>
-			<h4>Developer Trainee</p>
-			<p>Bienvenido a mi Portafolio!</p>
-			<button>Linkedin</button>
-			<button>Linkedin</button>
-			<button>Linkedin</button>
-		</div>
-		<section id="sobreMi">
-			<h3>Sobre Mi</h3>
-			<p>introducir pequeño texto mentiroso</p>
-		</section>
-		<section id="habilidades">
-			<h2>Habilidades</h2>
-			<ul>
-				<li>Virtual Box</li>
-				<li>java</li>
-				<li>Html</li>
-				<li>Css</li>
-			</ul>
-		</section>
-		<p><a href="#nav">Volver</a></p>
-	</body>
-	<footer>
-		<p>fecha: 26-09-25</p>
-	</footer> 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Lucas Araya" />
+    <meta name="description" content="Portafolio de Lucas Araya, Developer Trainee en Sistemas. Proyectos, habilidades y contacto." />
+    <title>Portafolio de Lucas Araya - Developer Trainee</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <!-- Botón de modo oscuro -->
+            <button id="theme-toggle" aria-label="Cambiar tema">🌙 Modo Oscuro</button>
+            <!-- Botón de encendido/apagado RGB -->
+            <button id="rgb-toggle" aria-label="Encender RGB">RGB</button>
+            <ul>
+                <li><a href="#sobreMi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="portada">
+        <img src="photo.jpg" alt="Foto de Lucas Araya" />
+        <h1>Lucas Araya</h1>
+        <h2>Developer Trainee</h2>
+        <p>Bienvenido a mi Portafolio!</p>
+        <div class="boton-portada">
+            <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="sobreMi">
+            <h2>Sobre mí</h2>
+            <p>Actualmente estudio la Licenciatura en Sistemas. Me apasiona el desarrollo web y la administración de sistemas Linux, buscando siempre optimizar y aprender nuevas tecnologías.</p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>VirtualBox</li>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Linux (Arch, Ubuntu)</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <p>Aquí irán algunos de mis proyectos destacados, como configuraciones de sistemas dual-boot, scripts de automatización y sitios web personales.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lucas Araya | <a href="mailto:lucasaraya@email.com">Contacto</a></p>
+    </footer>
+</body>
+</html>
